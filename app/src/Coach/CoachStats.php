@@ -1,6 +1,6 @@
 <?php
 
-namespace Coach;
+	namespace Coach;
 
 	use Nox\ORM\Interfaces\ModelInstance;
 	use Nox\ORM\Interfaces\MySQLModelInterface;
