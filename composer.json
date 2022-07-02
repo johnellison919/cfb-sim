@@ -1,0 +1,8 @@
+{
+    "require": {
+        "nox7/nox": "2.0.0-beta12"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "9.5"
+    }
+}
