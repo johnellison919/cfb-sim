@@ -55,6 +55,13 @@
 		case WISCONSIN = 50;
 		case WYOMING = 51;
 
+		const RARITY_MULTIPLIERS = [
+			"Common" => 4,
+			"Uncommon" => 3,
+			"Rare" => 2,
+			"VeryRare" => 1,
+		];
+
 		public static function getByValue(int $caseValue): ?States{
 			foreach(self::cases() as $case){
 				if ($case->value === $caseValue){

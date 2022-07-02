@@ -53,15 +53,11 @@
 		 */
 		public static function generateState(): int{
 			$states = [];
-			$commonMultiplier = 4;
-			$uncommonMultiplier = 3;
-			$rareMultiplier = 2;
-			$veryRareMultiplier = 1;
 
 			// Adds the common states to the array
 			foreach(Common::cases() as $case) {
 				// Adds each state one times the multiplier
-				for($i = 0; $i < $commonMultiplier; $i++) {
+				for($i = 0; $i < States::RARITY_MULTIPLIERS["Common"]; $i++) {
 					$states[] = $case->value;
 				}
 			}
@@ -69,7 +65,7 @@
 			// Adds the uncommon states to the array
 			foreach(Uncommon::cases() as $case) {
 				// Adds each state one times the multiplier
-				for($i = 0; $i < $uncommonMultiplier; $i++) {
+				for($i = 0; $i < States::RARITY_MULTIPLIERS["Uncommon"]; $i++) {
 					$states[] = $case->value;
 				}
 			}
@@ -77,7 +73,7 @@
 			// Adds the rare states to the array
 			foreach(Rare::cases() as $case) {
 				// Adds each state one times the multiplier
-				for($i = 0; $i < $rareMultiplier; $i++) {
+				for($i = 0; $i < States::RARITY_MULTIPLIERS["Rare"]; $i++) {
 					$states[] = $case->value;
 				}
 			}
@@ -85,7 +81,7 @@
 			// Adds the very rare states to the array
 			foreach(VeryRare::cases() as $case) {
 				// Adds each state one times the multiplier
-				for($i = 0; $i < $veryRareMultiplier; $i++) {
+				for($i = 0; $i < States::RARITY_MULTIPLIERS["VeryRare"]; $i++) {
 					$states[] = $case->value;
 				}
 			}
@@ -107,7 +103,6 @@
 			$stateName = States::getByValue($state)->name;
 			$stateReflectionEnum = new ReflectionEnum("Utils\Cities\\" . $stateName);
 
-
 			foreach($stateReflectionEnum->getCases() as $case) {
 				$cities[] = $case->getValue()->value;
 			}
@@ -124,8 +119,10 @@
 			return ["", ""];
 		}
 
-		// TODO
 		public static function generatePosition(): int{
+			$positions = [];
+
+
 			return 0;
 		}
 
