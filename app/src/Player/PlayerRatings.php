@@ -13,7 +13,7 @@
 
 		public static function getModel(): MySQLModelInterface
 		{
-			return new PlayersModel();
+			return new PlayerRatingsModel();
 		}
 
 		public function __construct()
