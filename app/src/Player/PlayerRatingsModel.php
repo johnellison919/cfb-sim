@@ -42,8 +42,8 @@
 		{
 			return [
 				new ColumnDefinition(
-					name: "playerID",
-					classPropertyName: "player_id",
+					name: "player_id",
+					classPropertyName: "playerID",
 					dataType: new Integer(),
 					defaultValue: 0,
 					isUnique: true,
