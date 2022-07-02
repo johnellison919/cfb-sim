@@ -2,6 +2,11 @@
 
 	namespace Recruit;
 
+	use Utils\States\Common;
+	use Utils\States\Rare;
+	use Utils\States\Uncommon;
+	use Utils\States\VeryRare;
+
 	class RecruitService
 	{
 
@@ -35,12 +40,51 @@
 			}
 		}
 
-		// TODO
+
 		public static function generateState(): int{
-			return 0;
+			$states = [];
+			$commonMultiplier = 4;
+			$uncommonMultiplier = 3;
+			$rareMultiplier = 2;
+			$veryRareMultiplier = 1;
+
+			// Adds the common states to the array
+			foreach(Common::cases() as $case) {
+				// Adds each state one times the multiplier
+				for($i = 0; $i < $commonMultiplier; $i++) {
+					$states[] = $case->value;
+				}
+			}
+
+			// Adds the uncommon states to the array
+			foreach(Uncommon::cases() as $case) {
+				// Adds each state one times the multiplier
+				for($i = 0; $i < $uncommonMultiplier; $i++) {
+					$states[] = $case->value;
+				}
+			}
+
+			// Adds the rare states to the array
+			foreach(Rare::cases() as $case) {
+				// Adds each state one times the multiplier
+				for($i = 0; $i < $rareMultiplier; $i++) {
+					$states[] = $case->value;
+				}
+			}
+
+			// Adds the very rare states to the array
+			foreach(VeryRare::cases() as $case) {
+				// Adds each state one times the multiplier
+				for($i = 0; $i < $veryRareMultiplier; $i++) {
+					$states[] = $case->value;
+				}
+			}
+
+			$key = array_rand($states);
+
+			return $states[$key];
 		}
 
-		// TODO
 		public static function generateCity(
 			string $state
 		): int{
