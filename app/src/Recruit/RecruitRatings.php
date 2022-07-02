@@ -10,7 +10,7 @@
 	class RecruitRatings extends ModelClass implements ModelInstance
 	{
 		public int $recruitID;
-		// TODO: add different recruit ratings like speed, throwing, etc.
+		// TODO: add different recruit ratings like speed, throwing, etc. (make sure to include school preference stats)
 
 		public static function getModel(): MySQLModelInterface
 		{

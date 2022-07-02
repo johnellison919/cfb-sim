@@ -51,7 +51,7 @@
 	$nox->setLayoutsDirectory(__DIR__ . "/resources/layouts");
 	$nox->setSourceCodeDirectory(__DIR__ . "/src");
 
-	// Setup the Abyss ORM (MySQL ORM)
+	// Set up the Abyss ORM (MySQL ORM)
 	// Comment the Abyss credentials out if you do not need MySQL
 	// Multiple credentials can be added if you have multiple databases/schemas
 	Abyss::addCredentials(new DatabaseCredentials(
