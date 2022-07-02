@@ -24,7 +24,7 @@
 		/**
 		 * The string name of the class this model represents and can instantiate
 		 */
-		private string $representingClassName = Recruit::class;
+		private string $representingClassName = RecruitRatings::class;
 
 		public function getDatabaseName(): string{
 			return $this->mysqlDatabaseName;
