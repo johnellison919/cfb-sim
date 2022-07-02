@@ -6,7 +6,7 @@
 	use Nox\ORM\Interfaces\MySQLModelInterface;
 	use Nox\ORM\ModelClass;
 
-	class RecruitRatingsRatings extends ModelClass implements ModelInstance
+	class RecruitRatings extends ModelClass implements ModelInstance
 	{
 		public int $recruitID;
 		// TODO: add different recruit ratings like speed, throwing, etc.
