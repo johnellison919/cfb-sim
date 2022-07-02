@@ -54,4 +54,14 @@
 		case WEST_VIRGINIA = 49;
 		case WISCONSIN = 50;
 		case WYOMING = 51;
+
+		public static function getByValue(int $caseValue): ?States{
+			foreach(self::cases() as $case){
+				if ($case->value === $caseValue){
+					return $case;
+				}
+			}
+
+			return null;
+		}
 	}

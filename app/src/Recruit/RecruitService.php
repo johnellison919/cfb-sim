@@ -2,14 +2,22 @@
 
 	namespace Recruit;
 
+	use ReflectionEnum;
+	use ReflectionException;
 	use Utils\States\Common;
 	use Utils\States\Rare;
+	use Utils\States\States;
 	use Utils\States\Uncommon;
 	use Utils\States\VeryRare;
 
 	class RecruitService
 	{
 
+		/**
+		 * @param int $amount
+		 * @return void
+		 * @throws ReflectionException
+		 */
 		public static function generateRecruits(
 			int $amount
 		): void{
@@ -40,7 +48,9 @@
 			}
 		}
 
-
+		/**
+		 * @return int
+		 */
 		public static function generateState(): int{
 			$states = [];
 			$commonMultiplier = 4;
@@ -85,10 +95,26 @@
 			return $states[$key];
 		}
 
+		/**
+		 * @param int $state
+		 * @return string
+		 * @throws ReflectionException
+		 */
 		public static function generateCity(
-			string $state
-		): int{
-			return 0;
+			int $state
+		): string{
+			$cities = [];
+			$stateName = States::getByValue($state)->name;
+			$stateReflectionEnum = new ReflectionEnum("Utils\Cities\\" . $stateName);
+
+
+			foreach($stateReflectionEnum->getCases() as $case) {
+				$cities[] = $case->getValue()->value;
+			}
+
+			$key = array_rand($cities);
+
+			return $cities[$key];
 		}
 
 		// TODO
