@@ -19,7 +19,7 @@
 		/**
 		 * The name of this Model in the MySQL database as a table
 		 */
-		private string $mysqlTableName = "coaches";
+		private string $mysqlTableName = "records";
 
 		/**
 		 * The string name of the class this model represents and can instantiate
