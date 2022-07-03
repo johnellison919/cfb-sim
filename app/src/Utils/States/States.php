@@ -62,6 +62,11 @@
 			"VeryRare" => 1,
 		];
 
+		const COMMON_STATES = [5, 10, 11, 44];
+		const UNCOMMON_STATES = [1, 19, 23, 25, 34, 36, 43, 47];
+		const RARE_STATES = [3, 4, 6, 7, 9, 12, 14, 15, 16, 17, 18, 21, 24, 26, 28, 29, 31, 33, 37, 38, 39, 41, 45, 48, 49];
+		const VERY_RARE_STATES = [2, 8, 13, 20, 22, 27, 30, 32, 35, 40, 42, 46, 50, 51];
+
 		public static function getByValue(int $caseValue): ?States{
 			foreach(self::cases() as $case){
 				if ($case->value === $caseValue){

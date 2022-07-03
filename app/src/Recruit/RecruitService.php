@@ -39,13 +39,13 @@
 					state: $state,
 				);
 
-				$recruitRatings = RecruitRatings::createRecruitRatings(
-					recruitID: $recruit->id
-				);
-
-				$recruitInterests = RecruitInterests::createRecruitInterests(
-					recruitID: $recruit->id,
-				);
+//				$recruitRatings = RecruitRatings::createRecruitRatings(
+//					recruitID: $recruit->id
+//				);
+//
+//				$recruitInterests = RecruitInterests::createRecruitInterests(
+//					recruitID: $recruit->id,
+//				);
 			}
 		}
 
@@ -56,34 +56,34 @@
 			$states = [];
 
 			// Adds the common states to the array
-			foreach(Common::cases() as $case) {
+			foreach(States::COMMON_STATES as $state) {
 				// Adds each state one times the multiplier
 				for($i = 0; $i < States::RARITY_MULTIPLIERS["Common"]; $i++) {
-					$states[] = $case->value;
+					$states[] = $state;
 				}
 			}
 
 			// Adds the uncommon states to the array
-			foreach(Uncommon::cases() as $case) {
+			foreach(States::UNCOMMON_STATES as $state) {
 				// Adds each state one times the multiplier
 				for($i = 0; $i < States::RARITY_MULTIPLIERS["Uncommon"]; $i++) {
-					$states[] = $case->value;
+					$states[] = $state;
 				}
 			}
 
 			// Adds the rare states to the array
-			foreach(Rare::cases() as $case) {
+			foreach(States::RARE_STATES as $state) {
 				// Adds each state one times the multiplier
 				for($i = 0; $i < States::RARITY_MULTIPLIERS["Rare"]; $i++) {
-					$states[] = $case->value;
+					$states[] = $state;
 				}
 			}
 
 			// Adds the very rare states to the array
-			foreach(VeryRare::cases() as $case) {
+			foreach(States::VERY_RARE_STATES as $state) {
 				// Adds each state one times the multiplier
 				for($i = 0; $i < States::RARITY_MULTIPLIERS["VeryRare"]; $i++) {
-					$states[] = $case->value;
+					$states[] = $state;
 				}
 			}
 
