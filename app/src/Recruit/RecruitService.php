@@ -4,6 +4,8 @@
 
 	use ReflectionEnum;
 	use ReflectionException;
+	use Utils\Names\Names;
+	use Utils\Names\Nicknames;
 	use Utils\Positions;
 	use Utils\States\States;
 	use Utils\UtilService;
@@ -22,13 +24,13 @@
 			for($i = 0; $i < $amount; $i++) {
 				$state = self::generateState();
 				$city = self::generateCity($state);
-				$name = self::generateName($state);
+				$name = self::generateName();
 				$position = self::generatePosition();
 				$size = self::generateSize($position);
 
 				$recruit = Recruit::createRecruit(
-					firstName: $name[0],
-					lastName: $name[1],
+					firstName: $name["firstName"],
+					lastName: $name["lastName"],
 					positionID: $position,
 					height: $size["height"],
 					weight: $size["weight"],
@@ -110,11 +112,26 @@
 			return $cities[$key];
 		}
 
-		// TODO
-		public static function generateName(
-			string $state
-		): array{
-			return ["", ""];
+		/**
+		 * @return array
+		 */
+		public static function generateName(): array{
+			// Gives a 1/500 chance for the first name to be a nickname
+			if(rand(1, 500) === 1) {
+				$firstNames = Nicknames::NICKNAMES;
+			} else {
+				$firstNames = Names::FIRST_NAMES;
+			}
+
+			$lastNames = Names::LAST_NAMES;
+
+			$firstNameKey = array_rand($firstNames);
+			$lastNameKey = array_rand($lastNames);
+
+			return [
+				"firstName" => $firstNames[$firstNameKey],
+				"lastName" => $lastNames[$lastNameKey],
+			];
 		}
 
 		/**
@@ -138,7 +155,7 @@
 
 		/**
 		 * @param int $position
-		 * @return int[]
+		 * @return array
 		 */
 		public static function generateSize(
 			int $position
