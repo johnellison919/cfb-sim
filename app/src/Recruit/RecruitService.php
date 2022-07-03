@@ -38,13 +38,13 @@
 					state: $state,
 				);
 
-//				$recruitRatings = RecruitRatings::createRecruitRatings(
-//					recruitID: $recruit->id
-//				);
-//
-//				$recruitInterests = RecruitInterests::createRecruitInterests(
-//					recruitID: $recruit->id,
-//				);
+				$recruitRatings = RecruitRatings::createRecruitRatings(
+					recruitID: $recruit->id
+				);
+
+				$recruitInterests = RecruitInterests::createRecruitInterests(
+					recruitID: $recruit->id,
+				);
 			}
 		}
 
@@ -133,10 +133,27 @@
 				return self::generateName();
 			}
 
-			return [
-				"firstName" => $firstNames[$firstNameKey],
-				"lastName" => $lastNames[$lastNameKey],
-			];
+			// Gives a 1/500 chance for the last name to be hyphenated
+			if(rand(1, 500) === 1) {
+				$hyphenatedLastNameKey = array_rand($lastNames);
+
+				// Prevents the two last names from being the same
+				if($hyphenatedLastNameKey === $lastNameKey) {
+					return self::generateName();
+				}
+
+				return [
+					"firstName" => $firstNames[$firstNameKey],
+					"lastName" => $lastNames[$lastNameKey] . "-" . $lastNames[$hyphenatedLastNameKey],
+				];
+			} else {
+				return [
+					"firstName" => $firstNames[$firstNameKey],
+					"lastName" => $lastNames[$lastNameKey],
+				];
+			}
+
+
 		}
 
 		/**
