@@ -128,6 +128,11 @@
 			$firstNameKey = array_rand($firstNames);
 			$lastNameKey = array_rand($lastNames);
 
+			// Prevents the first and last name from being the same
+			if($firstNames[$firstNameKey] === $lastNames[$lastNameKey]) {
+				return self::generateName();
+			}
+
 			return [
 				"firstName" => $firstNames[$firstNameKey],
 				"lastName" => $lastNames[$lastNameKey],
