@@ -9,7 +9,7 @@
 	class Util extends ModelClass implements ModelInstance
 	{
 		public string $name;
-		public ?string $value;
+		public ?int $value;
 
 		public static function getModel(): MySQLModelInterface
 		{

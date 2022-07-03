@@ -46,12 +46,14 @@
 					classPropertyName: "name",
 					dataType: new VariableCharacter(),
 					defaultValue: "",
+					isPrimary: true,
+					isNull: false,
 				),
 				new ColumnDefinition(
 					name: "value",
 					classPropertyName: "value",
-					dataType: new VariableCharacter(),
-					defaultValue: "",
+					dataType: new Integer(),
+					defaultValue: 0,
 				),
 			];
 		}
