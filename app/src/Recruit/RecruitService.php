@@ -4,6 +4,7 @@
 
 	use ReflectionEnum;
 	use ReflectionException;
+	use Utils\Positions;
 	use Utils\States\Common;
 	use Utils\States\Rare;
 	use Utils\States\States;
@@ -119,11 +120,23 @@
 			return ["", ""];
 		}
 
+		/**
+		 * @return int
+		 */
 		public static function generatePosition(): int{
 			$positions = [];
 
+			// Adds the different positions to the array
+			foreach(Positions::cases() as $case) {
+				// Adds each position one times the multiplier
+				for($i = 0; $i < Positions::POSITION_MULTIPLIERS[$case->name]; $i++) {
+					$positions[] = $case->value;
+				}
+			}
 
-			return 0;
+			$key = array_rand($positions);
+
+			return $positions[$key];
 		}
 
 		// TODO
