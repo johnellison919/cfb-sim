@@ -2,6 +2,7 @@
 
 	namespace Utils;
 
+	// TODO: Adjust position multipliers
 	enum Positions: int{
 		case QUARTERBACK = 1;
 		case HALFBACK = 2;
