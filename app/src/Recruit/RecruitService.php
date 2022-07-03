@@ -5,11 +5,8 @@
 	use ReflectionEnum;
 	use ReflectionException;
 	use Utils\Positions;
-	use Utils\States\Common;
-	use Utils\States\Rare;
 	use Utils\States\States;
-	use Utils\States\Uncommon;
-	use Utils\States\VeryRare;
+	use Utils\UtilService;
 
 	class RecruitService
 	{
@@ -33,8 +30,8 @@
 					firstName: $name[0],
 					lastName: $name[1],
 					positionID: $position,
-					height: $size[0],
-					weight: $size[1],
+					height: $size["height"],
+					weight: $size["weight"],
 					city: $city,
 					state: $state,
 				);
@@ -102,7 +99,7 @@
 		): string{
 			$cities = [];
 			$stateName = States::getByValue($state)->name;
-			$stateReflectionEnum = new ReflectionEnum("Utils\Cities\\" . $stateName);
+			$stateReflectionEnum = new ReflectionEnum("Utils\States\\" . $stateName);
 
 			foreach($stateReflectionEnum->getCases() as $case) {
 				$cities[] = $case->getValue()->value;
@@ -139,10 +136,35 @@
 			return $positions[$key];
 		}
 
-		// TODO
+		/**
+		 * @param int $position
+		 * @return int[]
+		 */
 		public static function generateSize(
 			int $position
 		): array{
-			return [0, 0];
+			$positionName = Positions::getByValue($position)->name;
+			$positionHeightRangeString = $positionName . "_HEIGHT_RANGE";
+			$positionWeightRangeString = $positionName . "_WEIGHT_RANGE";
+
+			$heightArray = constant("Utils\Positions::$positionHeightRangeString");
+			$weightArray = constant("Utils\Positions::$positionWeightRangeString");
+
+			$height = UtilService::getRandomNumberUsingBellCurve(
+				min: $heightArray[0],
+				max: $heightArray[1],
+				standardDeviation: 3
+			);
+
+			$weight = UtilService::getRandomNumberUsingBellCurve(
+				min: $weightArray[0],
+				max: $weightArray[1],
+				standardDeviation: 10
+			);
+
+			return [
+				"height" => $height,
+				"weight" => $weight
+			];
 		}
 	}
