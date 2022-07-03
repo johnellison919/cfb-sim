@@ -5,6 +5,7 @@
 	class Nicknames
 	{
 		const NICKNAMES = [
+			"Ace",
 			"Bear",
 			"Big Tuna",
 			"Boogie",
