@@ -18,6 +18,11 @@
 		directoryPath: __DIR__ . "/resources/static",
 	);
 
+	$nox->addStaticDirectory(
+		uriStub: "/bootstrap",
+		directoryPath: __DIR__ . "/../vendor/twbs/bootstrap",
+	);
+
 	// Support static file mime types so the browser can recognize the static files
 	$nox->mapExtensionToMimeType("css", "text/css");
 	$nox->mapExtensionToMimeType("map", "text/plain");
