@@ -18,8 +18,8 @@
 		 * @throws ViewFileDoesNotExist
 		 * @throws LayoutDoesNotExist
 		 */
-		#[Route("GET", "/")]
-		public function mainView(): string{
-			return Renderer::renderView("main.php");
+		#[Route("GET", "/dashboard/")]
+		public function dashboardView(): string{
+			return Renderer::renderView("dashboard.php");
 		}
 	}
