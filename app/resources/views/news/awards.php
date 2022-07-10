@@ -1,12 +1,12 @@
 @Layout = "base.php"
 @Head{
-	<title>Dashboard</title>
+	<title>Awards</title>
 }
 @Body{
-	<?php include "partials/navigation.php" ?>
+	<?php include __DIR__ . "/../_partials/navigation.php" ?>
 	<main class="container">
 		<section>
-			Dashboard
+			Awards
 		</section>
 	</main>
 }
