@@ -11,7 +11,7 @@
 	use Nox\Router\BaseController;
 
 	#[Controller]
-	class RouteController extends BaseController{
+	class DashboardController extends BaseController{
 
 		/**
 		 * @throws ParseError
