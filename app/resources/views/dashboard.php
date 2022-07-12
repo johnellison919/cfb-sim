@@ -3,7 +3,7 @@
 	<title>Dashboard</title>
 }
 @Body{
-	<?php include "partials/navigation.php" ?>
+	<?php include __DIR__ . "/_partials/navigation.php" ?>
 	<main class="container">
 		<section>
 			Dashboard
