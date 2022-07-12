@@ -41,19 +41,19 @@
 				</a>
 				<ul class="dropdown-menu">
 					<li>
-						<a class="dropdown-item" href="#">Recruiting Board</a>
+						<a class="dropdown-item" href="/recruiting/recruiting-board/">Recruiting Board</a>
 					</li>
 					<li>
-						<a class="dropdown-item" href="#">All Prospects</a>
+						<a class="dropdown-item" href="/recruiting/prospects/">Prospects</a>
 					</li>
 					<li>
-						<a class="dropdown-item" href="#">My School</a>
+						<a class="dropdown-item" href="/recruiting/my-school/">My School</a>
 					</li>
 					<li>
-						<a class="dropdown-item" href="#">Team Needs</a>
+						<a class="dropdown-item" href="/recruiting/team-needs/">Team Needs</a>
 					</li>
 					<li>
-						<a class="dropdown-item" href="#">Recruiting Plan</a>
+						<a class="dropdown-item" href="/recruiting/recruiting-plan/">Recruiting Plan</a>
 					</li>
 				</ul>
 			</li>
@@ -63,13 +63,13 @@
 				</a>
 				<ul class="dropdown-menu">
 					<li>
-						<a class="dropdown-item" href="#">Coaching Skills</a>
+						<a class="dropdown-item" href="/coaching/coaching-skills/">Coaching Skills</a>
 					</li>
 					<li>
-						<a class="dropdown-item" href="#">Contracts</a>
+						<a class="dropdown-item" href="/coaching/contracts/">Contracts</a>
 					</li>
 					<li>
-						<a class="dropdown-item" href="#">Coaching Style</a>
+						<a class="dropdown-item" href="/coaching/coaching-style/">Coaching Style</a>
 					</li>
 				</ul>
 			</li>
@@ -79,13 +79,13 @@
 				</a>
 				<ul class="dropdown-menu">
 					<li>
-						<a class="dropdown-item" href="#">Roster</a>
+						<a class="dropdown-item" href="/team/roster/">Roster</a>
 					</li>
 					<li>
-						<a class="dropdown-item" href="#">Depth Chart</a>
+						<a class="dropdown-item" href="/team/depth-chart/">Depth Chart</a>
 					</li>
 					<li>
-						<a class="dropdown-item" href="#">Injury Report</a>
+						<a class="dropdown-item" href="/team/injury-report/">Injury Report</a>
 					</li>
 				</ul>
 			</li>
@@ -95,22 +95,22 @@
 				</a>
 				<ul class="dropdown-menu">
 					<li>
-						<a class="dropdown-item" href="#">Season Stats</a>
+						<a class="dropdown-item" href="/stats-and-records/season-stats/">Season Stats</a>
 					</li>
 					<li>
-						<a class="dropdown-item" href="#">Career Stats</a>
+						<a class="dropdown-item" href="/stats-and-records/career-stats/">Career Stats</a>
 					</li>
 					<li>
-						<a class="dropdown-item" href="#">Coaching Stats</a>
+						<a class="dropdown-item" href="/stats-and-records/coaching-stats/">Coaching Stats</a>
 					</li>
 					<li>
-						<a class="dropdown-item" href="#">School Records</a>
+						<a class="dropdown-item" href="/stats-and-records/school-records/">School Records</a>
 					</li>
 					<li>
-						<a class="dropdown-item" href="#">NCAA Records</a>
+						<a class="dropdown-item" href="/stats-and-records/ncaa-records/">NCAA Records</a>
 					</li>
 					<li>
-						<a class="dropdown-item" href="#">Coaching Records</a>
+						<a class="dropdown-item" href="/stats-and-records/coaching-records/">Coaching Records</a>
 					</li>
 				</ul>
 			</li>
