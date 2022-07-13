@@ -1,12 +1,12 @@
 <?php
 
-	namespace Team;
+	namespace School;
 
 	use Nox\ORM\Interfaces\ModelInstance;
 	use Nox\ORM\Interfaces\MySQLModelInterface;
 	use Nox\ORM\ModelClass;
 
-	class Team extends ModelClass implements ModelInstance
+	class School extends ModelClass implements ModelInstance
 	{
 		public int $id;
 		public string $name;
@@ -20,7 +20,7 @@
 
 		public static function getModel(): MySQLModelInterface
 		{
-			return new TeamsModel();
+			return new SchoolsModel();
 		}
 
 		public function __construct()

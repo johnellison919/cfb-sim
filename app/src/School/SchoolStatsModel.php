@@ -1,6 +1,6 @@
 <?php
 
-	namespace Team;
+	namespace School;
 
 	use Nox\ORM\Attributes\Model;
 	use Nox\ORM\ColumnDefinition;
@@ -9,7 +9,7 @@
 	use NoxEnv;
 
 	#[Model]
-	class TeamStatsModel implements MySQLModelInterface
+	class SchoolStatsModel implements MySQLModelInterface
 	{
 		/**
 		 * The name of the database this table belongs to
@@ -19,12 +19,12 @@
 		/**
 		 * The name of this Model in the MySQL database as a table
 		 */
-		private string $mysqlTableName = "teams_stats";
+		private string $mysqlTableName = "schools_stats";
 
 		/**
 		 * The string name of the class this model represents and can instantiate
 		 */
-		private string $representingClassName = TeamStats::class;
+		private string $representingClassName = SchoolStats::class;
 
 		public function getDatabaseName(): string{
 			return $this->mysqlDatabaseName;
@@ -41,8 +41,8 @@
 		public function getColumns(): array{
 			return [
 				new ColumnDefinition(
-					name: "team_id",
-					classPropertyName: "teamID",
+					name: "school_id",
+					classPropertyName: "schoolID",
 					dataType: new Integer(),
 					defaultValue: 0,
 				),
